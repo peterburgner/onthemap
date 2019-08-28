@@ -13,6 +13,7 @@
 		044A352F23162EBB0012892C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 044A352E23162EBB0012892C /* Assets.xcassets */; };
 		044A353223162EBB0012892C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 044A353023162EBB0012892C /* LaunchScreen.storyboard */; };
 		0462D2A52316515300FBB2C6 /* LoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0462D2A42316515300FBB2C6 /* LoginButton.swift */; };
+		0462D2A72316524800FBB2C6 /* UdacityClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0462D2A62316524800FBB2C6 /* UdacityClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		044A353123162EBB0012892C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		044A353323162EBB0012892C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0462D2A42316515300FBB2C6 /* LoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginButton.swift; path = onthemap/LoginButton.swift; sourceTree = SOURCE_ROOT; };
+		0462D2A62316524800FBB2C6 /* UdacityClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UdacityClient.swift; path = onthemap/UdacityClient.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 		044A354823164BCF0012892C /* UdacityClient */ = {
 			isa = PBXGroup;
 			children = (
+				0462D2A62316524800FBB2C6 /* UdacityClient.swift */,
 			);
 			path = UdacityClient;
 			sourceTree = "<group>";
@@ -202,6 +205,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0462D2A72316524800FBB2C6 /* UdacityClient.swift in Sources */,
 				044A352A23162EB80012892C /* LoginViewController.swift in Sources */,
 				0462D2A52316515300FBB2C6 /* LoginButton.swift in Sources */,
 				044A352823162EB80012892C /* AppDelegate.swift in Sources */,

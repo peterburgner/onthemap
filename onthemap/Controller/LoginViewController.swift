@@ -22,6 +22,11 @@ class LoginViewController: UIViewController {
         loginButton.layer.cornerRadius = 5        
 
     }
+    
+    @IBAction func login(_ sender: Any) {
+        UdacityClient.login(username: emailField.text ?? "", password: passwordField.text ?? "")
+    }
+    
 
 
 }
