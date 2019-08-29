@@ -64,6 +64,10 @@ class UdacityClient {
                 }
                 return
             } catch {
+                
+                
+                let loggedInResponse = try! decoder.decode(LoggedInResponse.self, from: newData)
+                Auth.sessionId = loggedInResponse.session.id
                 DispatchQueue.main.async {
                     completion(true, nil)
                 }
