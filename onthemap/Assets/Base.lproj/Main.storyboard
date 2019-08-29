@@ -33,6 +33,7 @@
                                     <constraint firstAttribute="width" constant="298" id="8ry-cF-l8J"/>
                                 </constraints>
                                 <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <textInputTraits key="textInputTraits" spellCheckingType="no" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D8h-8J-d4P" customClass="LoginButton" customModule="onthemap" customModuleProvider="target">
@@ -99,11 +100,27 @@
                         <outlet property="loginButton" destination="D8h-8J-d4P" id="vwS-5f-uXr"/>
                         <outlet property="passwordField" destination="lte-MH-LgR" id="AQG-wJ-OYY"/>
                         <outlet property="signupButton" destination="yE7-BV-tc4" id="D3k-8P-cVS"/>
+                        <segue destination="mkD-i5-ggn" kind="show" identifier="showMap" id="rTj-4u-slf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="FkF-yd-I8n">
+            <objects>
+                <viewController id="mkD-i5-ggn" customClass="MapViewController" customModule="onthemap" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aWT-O6-rrv">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="oAe-Ic-MON"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0rD-3B-aHF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="969" y="140"/>
         </scene>
     </scenes>
     <resources>

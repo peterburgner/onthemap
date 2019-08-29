@@ -18,9 +18,6 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        loginButton.layer.cornerRadius = 5        
-
     }
     
     @IBAction func login(_ sender: Any) {
@@ -29,7 +26,7 @@ class LoginViewController: UIViewController {
     
     func handleLoginResponse(success: Bool, error: Error?) {
         if success {
-            print("Login successful")
+            performSegue(withIdentifier: "showMap", sender: nil)
         } else {
             showLoginFailure(message: error?.localizedDescription ?? "")
         }
