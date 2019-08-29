@@ -74,4 +74,8 @@ class UdacityClient {
         task.resume()
         
     }
+    
+    class func logout() {
+        Auth.sessionId = ""
+    }
 }

@@ -19,7 +19,8 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     @IBOutlet weak var tableButton: UITabBarItem!
     
     @IBAction func logout(_ sender: Any) {
-        
+        UdacityClient.logout()
+        performSegue(withIdentifier: "login", sender: nil)
     }
     @IBAction func reload(_ sender: Any) {
     }
