@@ -23,6 +23,9 @@ class LoginViewController: UIViewController {
     @IBAction func login(_ sender: Any) {
         UdacityClient.login(username: emailField.text ?? "", password: passwordField.text ?? "", completion: handleLoginResponse(success:error:) )
     }
+    @IBAction func signup(_ sender: Any) {
+        UIApplication.shared.open(UdacityClient.Endpoints.signup.url)
+    }
     
     func handleLoginResponse(success: Bool, error: Error?) {
         if success {

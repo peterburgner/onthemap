@@ -18,10 +18,13 @@ class UdacityClient {
         static let base = "https://onthemap-api.udacity.com/v1"
         
         case login
+        case signup
         
         var stringValue: String {
             switch self {
             case .login: return Endpoints.base + "/session"
+            // signup URL taken from incorrect spec
+            case .signup: return "https://www.google.com/url?q=https://www.udacity.com/account/auth%23!/signup&sa=D&ust=1566892321832000"
             }
             
         }
