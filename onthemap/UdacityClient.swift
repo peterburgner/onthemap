@@ -11,7 +11,6 @@ import Foundation
 class UdacityClient {
     
     struct Auth {
-        static var requestToken = ""
         static var sessionId = ""
     }
     

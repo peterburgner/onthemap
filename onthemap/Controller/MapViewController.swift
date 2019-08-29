@@ -7,6 +7,23 @@
 //
 
 import UIKit
+import MapKit
 
-class MapViewController: UIViewController {
+class MapViewController: UIViewController, MKMapViewDelegate {
+    
+    @IBOutlet weak var logoutButton: UIBarButtonItem!
+    @IBOutlet weak var reloadButton: UIBarButtonItem!
+    @IBOutlet weak var addButton: UIBarButtonItem!
+    @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var mapButton: UITabBarItem!
+    @IBOutlet weak var tableButton: UITabBarItem!
+    
+    @IBAction func logout(_ sender: Any) {
+        
+    }
+    @IBAction func reload(_ sender: Any) {
+    }
+    @IBAction func add(_ sender: Any) {
+    }
+    @IBOutlet weak var showTable: UITabBarItem!
 }

@@ -22,6 +22,7 @@ class LoginViewController: UIViewController {
     
     @IBAction func login(_ sender: Any) {
         UdacityClient.login(username: emailField.text ?? "", password: passwordField.text ?? "", completion: handleLoginResponse(success:error:) )
+        print("sessionID: "+UdacityClient.Auth.sessionId)
     }
     
     func handleLoginResponse(success: Bool, error: Error?) {

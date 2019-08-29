@@ -50,7 +50,7 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo-u" translatesAutoresizingMaskIntoConstraints="NO" id="QRu-ro-TbE">
-                                <rect key="frame" x="176" y="288" width="62" height="62"/>
+                                <rect key="frame" x="199" y="334" width="16" height="16"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q4a-Lp-vtO">
                                 <rect key="frame" x="102" y="526" width="210" height="29"/>
@@ -114,16 +114,78 @@
                     <view key="view" contentMode="scaleToFill" id="aWT-O6-rrv">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YbI-ok-Bdi">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <items>
+                                    <navigationItem title="On the Map" id="5My-vE-ChS">
+                                        <barButtonItem key="leftBarButtonItem" title="Logout" id="hdj-Vl-9wi">
+                                            <connections>
+                                                <action selector="logout:" destination="mkD-i5-ggn" id="SNw-kc-SDs"/>
+                                                <segue destination="BYZ-38-t0r" kind="show" id="YRR-0p-zuc"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <rightBarButtonItems>
+                                            <barButtonItem systemItem="add" id="ZyD-Ka-1B2">
+                                                <connections>
+                                                    <action selector="add:" destination="mkD-i5-ggn" id="IML-rl-2pM"/>
+                                                </connections>
+                                            </barButtonItem>
+                                            <barButtonItem title="Reload" image="icon_refresh" id="tiY-Me-jb2">
+                                                <connections>
+                                                    <action selector="reload:" destination="mkD-i5-ggn" id="KU9-MI-efI"/>
+                                                </connections>
+                                            </barButtonItem>
+                                        </rightBarButtonItems>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jjs-UH-PFL">
+                                <rect key="frame" x="0.0" y="813" width="414" height="83"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <items>
+                                    <tabBarItem title="" image="icon_mapview-selected" selectedImage="icon_mapview-selected" id="NOF-oz-oy8"/>
+                                    <tabBarItem title="" image="icon_listview-deselected" id="jhn-Ex-j1Y"/>
+                                </items>
+                            </tabBar>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="xtb-LE-aPh">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                            </mapView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="oAe-Ic-MON" firstAttribute="trailing" secondItem="xtb-LE-aPh" secondAttribute="trailing" id="0cm-jd-r7o"/>
+                            <constraint firstAttribute="bottom" secondItem="Jjs-UH-PFL" secondAttribute="bottom" id="2gm-eH-Q97"/>
+                            <constraint firstItem="xtb-LE-aPh" firstAttribute="top" secondItem="YbI-ok-Bdi" secondAttribute="bottom" id="4Me-bc-s0e"/>
+                            <constraint firstItem="Jjs-UH-PFL" firstAttribute="trailing" secondItem="YbI-ok-Bdi" secondAttribute="trailing" id="4TA-px-SlT"/>
+                            <constraint firstItem="Jjs-UH-PFL" firstAttribute="top" secondItem="xtb-LE-aPh" secondAttribute="bottom" id="Ch2-qK-eKR"/>
+                            <constraint firstItem="xtb-LE-aPh" firstAttribute="leading" secondItem="oAe-Ic-MON" secondAttribute="leading" id="bmU-2B-WCm"/>
+                            <constraint firstItem="Jjs-UH-PFL" firstAttribute="leading" secondItem="xtb-LE-aPh" secondAttribute="leading" id="cdK-wZ-o29"/>
+                            <constraint firstItem="Jjs-UH-PFL" firstAttribute="trailing" secondItem="xtb-LE-aPh" secondAttribute="trailing" id="hVG-DX-5WM"/>
+                            <constraint firstItem="YbI-ok-Bdi" firstAttribute="top" secondItem="oAe-Ic-MON" secondAttribute="top" id="rbe-6F-JlQ"/>
+                            <constraint firstItem="Jjs-UH-PFL" firstAttribute="leading" secondItem="YbI-ok-Bdi" secondAttribute="leading" id="vFF-OC-Xrr"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="oAe-Ic-MON"/>
                     </view>
+                    <connections>
+                        <outlet property="addButton" destination="ZyD-Ka-1B2" id="BVq-Ye-3Bn"/>
+                        <outlet property="logoutButton" destination="hdj-Vl-9wi" id="sY3-Ep-30u"/>
+                        <outlet property="mapButton" destination="NOF-oz-oy8" id="Sa2-gU-SPo"/>
+                        <outlet property="mapView" destination="xtb-LE-aPh" id="JAP-9j-9lv"/>
+                        <outlet property="reloadButton" destination="tiY-Me-jb2" id="0tY-FF-iBB"/>
+                        <outlet property="showTable" destination="jhn-Ex-j1Y" id="KNN-fA-PFl"/>
+                        <outlet property="tableButton" destination="jhn-Ex-j1Y" id="Ypg-Cn-jPJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0rD-3B-aHF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="969" y="140"/>
+            <point key="canvasLocation" x="968.11594202898561" y="139.95535714285714"/>
         </scene>
     </scenes>
     <resources>
+        <image name="icon_listview-deselected" width="75" height="50"/>
+        <image name="icon_mapview-selected" width="75" height="50"/>
+        <image name="icon_refresh" width="24" height="24"/>
         <image name="logo-u" width="62" height="62"/>
     </resources>
 </document>
