@@ -14,6 +14,7 @@
 		044A353223162EBB0012892C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 044A353023162EBB0012892C /* LaunchScreen.storyboard */; };
 		0462D2A52316515300FBB2C6 /* LoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0462D2A42316515300FBB2C6 /* LoginButton.swift */; };
 		0462D2A72316524800FBB2C6 /* UdacityClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0462D2A62316524800FBB2C6 /* UdacityClient.swift */; };
+		048FB29D2317868F0092CFED /* LoginFailureResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048FB29C2317868F0092CFED /* LoginFailureResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		044A353323162EBB0012892C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0462D2A42316515300FBB2C6 /* LoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginButton.swift; path = onthemap/LoginButton.swift; sourceTree = SOURCE_ROOT; };
 		0462D2A62316524800FBB2C6 /* UdacityClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UdacityClient.swift; path = onthemap/UdacityClient.swift; sourceTree = SOURCE_ROOT; };
+		048FB29C2317868F0092CFED /* LoginFailureResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginFailureResponse.swift; path = onthemap/LoginFailureResponse.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,8 +93,9 @@
 			children = (
 				044A354723164BC80012892C /* Udacity */,
 			);
-			path = Model;
-			sourceTree = "<group>";
+			name = Model;
+			path = onthemap/Model;
+			sourceTree = SOURCE_ROOT;
 		};
 		044A354623164B7D0012892C /* View */ = {
 			isa = PBXGroup;
@@ -130,6 +133,7 @@
 		044A354A23164BEB0012892C /* UdacityResponse */ = {
 			isa = PBXGroup;
 			children = (
+				048FB29C2317868F0092CFED /* LoginFailureResponse.swift */,
 			);
 			path = UdacityResponse;
 			sourceTree = "<group>";
@@ -209,6 +213,7 @@
 				044A352A23162EB80012892C /* LoginViewController.swift in Sources */,
 				0462D2A52316515300FBB2C6 /* LoginButton.swift in Sources */,
 				044A352823162EB80012892C /* AppDelegate.swift in Sources */,
+				048FB29D2317868F0092CFED /* LoginFailureResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

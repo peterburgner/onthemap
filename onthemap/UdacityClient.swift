@@ -33,7 +33,7 @@ class UdacityClient {
     }
     
     
-    class func login(username:String, password: String) {
+    class func login(username:String, password: String, completion: @escaping (Bool, Error?) -> Void)  {
         
         var request = URLRequest(url: Endpoints.login.url)
         request.httpMethod = "POST"
@@ -43,13 +43,36 @@ class UdacityClient {
         request.httpBody = "{\"udacity\": {\"username\": \"\(username)\", \"password\": \"\(password)\"}}".data(using: .utf8)
         let session = URLSession.shared
         let task = session.dataTask(with: request) { data, response, error in
-            if error != nil { // Handle error…
+            
+            // no data received
+            guard let data = data else {
+                DispatchQueue.main.async {
+                    completion(false, error)
+                }
                 return
             }
-            let range = 5..<data!.count
-            let newData = data?.subdata(in: range) /* subset response data! */
-            print(String(data: newData!, encoding: .utf8)!)
+            
+            // data received but may be an error message
+            let range = 5..<data.count
+            let newData = data.subdata(in: range) /* subset response data! */
+            print(String(data: newData, encoding: .utf8)!)
+            
+            let decoder = JSONDecoder()
+            do {
+                let loginFailureResponse = try decoder.decode(LoginFailureResponse.self, from: newData)
+                DispatchQueue.main.async {
+                    completion(false, loginFailureResponse)
+                }
+                return
+            } catch {
+                DispatchQueue.main.async {
+                    completion(true, nil)
+                }
+                return
+            }
+
         }
         task.resume()
+        
     }
 }

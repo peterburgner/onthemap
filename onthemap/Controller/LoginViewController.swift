@@ -24,9 +24,23 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func login(_ sender: Any) {
-        UdacityClient.login(username: emailField.text ?? "", password: passwordField.text ?? "")
+        UdacityClient.login(username: emailField.text ?? "", password: passwordField.text ?? "", completion: handleLoginResponse(success:error:) )
     }
     
+    func handleLoginResponse(success: Bool, error: Error?) {
+        if success {
+            print("Login successful")
+        } else {
+            showLoginFailure(message: error?.localizedDescription ?? "")
+        }
+    }
+    
+    
+    func showLoginFailure(message: String) {
+        let alertVC = UIAlertController(title: "Login failed", message: message, preferredStyle: .alert)
+        alertVC.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))
+        show(alertVC, sender: nil)
+    }
 
 
 }
