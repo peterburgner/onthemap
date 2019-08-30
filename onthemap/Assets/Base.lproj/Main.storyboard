@@ -24,7 +24,7 @@
                                     <constraint firstAttribute="width" constant="298" id="6Tp-9B-JoA"/>
                                 </constraints>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" spellCheckingType="no" textContentType="username"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="lte-MH-LgR">
@@ -33,15 +33,16 @@
                                     <constraint firstAttribute="width" constant="298" id="8ry-cF-l8J"/>
                                 </constraints>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" spellCheckingType="no" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D8h-8J-d4P" customClass="LoginButton" customModule="onthemap" customModuleProvider="target">
-                                <rect key="frame" x="58" y="476" width="298" height="30"/>
+                                <rect key="frame" x="58" y="476" width="298" height="34"/>
                                 <color key="backgroundColor" red="0.0039215686274509803" green="0.70196078431372544" blue="0.89411764705882346" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="298" id="mmO-Ul-Kj8"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="LOG IN">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -53,7 +54,7 @@
                                 <rect key="frame" x="176" y="288" width="62" height="62"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q4a-Lp-vtO">
-                                <rect key="frame" x="102" y="526" width="210" height="29"/>
+                                <rect key="frame" x="102" y="530" width="210" height="29"/>
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Don't have an account?" textAlignment="right" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yel-JI-hTU">
                                         <rect key="frame" x="0.0" y="0.0" width="165" height="29"/>
