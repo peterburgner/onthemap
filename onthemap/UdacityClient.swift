@@ -131,7 +131,7 @@ class UdacityClient {
         task.resume()
     }
     
-    class func getStudentLocations(completion: @escaping ([StudentInformation], Error?) -> Void ) {
+    class func getStudentLocations(completion: @escaping ([StudentLocations], Error?) -> Void ) {
         let request = URLRequest(url: Endpoints.getStudentLocations("100", "-updatedAt").url)
         let session = URLSession.shared
         let task = session.dataTask(with: request) { data, response, error in
