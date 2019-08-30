@@ -118,9 +118,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ul2-1P-L1z">
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ul2-1P-L1z">
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="On the Map" id="P8l-XK-SlD">
                                         <barButtonItem key="leftBarButtonItem" title="Logout" id="pJs-Dn-31V">
@@ -143,8 +142,35 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="IE4-mK-Ofn">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="studentInformation" id="8bx-9Z-YrZ">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8bx-9Z-YrZ" id="JGD-f9-aMR">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="OA3-gD-Oll" id="HtZ-4e-X3g"/>
+                                    <outlet property="delegate" destination="OA3-gD-Oll" id="8n3-aR-cQZ"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="IE4-mK-Ofn" firstAttribute="top" secondItem="Ul2-1P-L1z" secondAttribute="bottom" id="6yv-5x-sQZ"/>
+                            <constraint firstItem="IE4-mK-Ofn" firstAttribute="bottom" secondItem="t8R-pg-OSt" secondAttribute="bottom" id="FVt-F5-8QD"/>
+                            <constraint firstItem="Ul2-1P-L1z" firstAttribute="top" secondItem="t8R-pg-OSt" secondAttribute="top" id="FrN-v9-SD6"/>
+                            <constraint firstItem="Ul2-1P-L1z" firstAttribute="leading" secondItem="IE4-mK-Ofn" secondAttribute="leading" id="J3b-MR-MAd"/>
+                            <constraint firstItem="IE4-mK-Ofn" firstAttribute="leading" secondItem="t8R-pg-OSt" secondAttribute="leading" id="VDl-ee-Gb1"/>
+                            <constraint firstItem="IE4-mK-Ofn" firstAttribute="trailing" secondItem="t8R-pg-OSt" secondAttribute="trailing" id="doZ-bN-eUE"/>
+                            <constraint firstItem="Ul2-1P-L1z" firstAttribute="trailing" secondItem="IE4-mK-Ofn" secondAttribute="trailing" id="qIi-eA-FVh"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="t8R-pg-OSt"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="icon_listview-selected" id="pj2-kW-wEb"/>
@@ -152,12 +178,13 @@
                         <outlet property="addButton" destination="E67-7V-fox" id="PSv-co-Ssf"/>
                         <outlet property="logoutButton" destination="pJs-Dn-31V" id="ceO-XM-O49"/>
                         <outlet property="reloadButton" destination="y4k-0j-K5P" id="eUY-zY-Jdn"/>
+                        <outlet property="table" destination="IE4-mK-Ofn" id="0Fa-DH-3sS"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="login" id="Q60-mt-H4Y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G1p-je-1tK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2038" y="-414"/>
+            <point key="canvasLocation" x="2037.68115942029" y="-414.50892857142856"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="icx-cc-8ZL">
