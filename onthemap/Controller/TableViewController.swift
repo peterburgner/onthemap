@@ -38,7 +38,11 @@ class TableViewController: UIViewController, UITabBarDelegate, UITableViewDelega
         return cell
     }
     
- 
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let currentStudent = UdacityClient.studentLocation[indexPath.row]
+            let app = UIApplication.shared
+                app.open(URL(string:currentStudent.mediaURL)!, options: [:], completionHandler: nil)
+    } 
     
     
 }
