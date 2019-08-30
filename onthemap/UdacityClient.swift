@@ -37,6 +37,8 @@ class UdacityClient {
         }
     }
     
+    static var studentLocation = [StudentLocations]()
+    
     
     class func login(username:String, password: String, completion: @escaping (Bool, Error?) -> Void)  {
         

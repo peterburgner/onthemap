@@ -42,7 +42,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         } else
         {
             
-            print(studentLocations)
+            UdacityClient.studentLocation = studentLocations
             
             // We will create an MKPointAnnotation for each dictionary in "locations". The
             // point annotations will be stored in this array, and then provided to the map view.
@@ -52,7 +52,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
             // to create map annotations. This would be more stylish if the dictionaries were being
             // used to create custom structs. Perhaps StudentLocation structs.
             
-            for studentLocation in studentLocations {
+            for studentLocation in UdacityClient.studentLocation {
                 
                 // Notice that the float values are being used to create CLLocationDegree values.
                 // This is a version of the Double type.
