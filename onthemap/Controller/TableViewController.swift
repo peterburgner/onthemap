@@ -24,7 +24,11 @@ class TableViewController: UIViewController, UITabBarDelegate, UITableViewDelega
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "studentInformation", for: indexPath)
         
-        cell.textLabel?.text = UdacityClient.studentLocation[indexPath.row].firstName
+        let currentStudent = UdacityClient.studentLocation[indexPath.row]
+        
+        cell.imageView?.image = UIImage(named: "icon_pin")
+        cell.textLabel?.text = currentStudent.firstName + " " + currentStudent.lastName
+        
         
         return cell
     }
