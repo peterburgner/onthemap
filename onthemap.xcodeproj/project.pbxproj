@@ -20,6 +20,7 @@
 		048FB2A62318CD510092CFED /* LogoutResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048FB2A52318CD510092CFED /* LogoutResponse.swift */; };
 		048FB2A82318D3320092CFED /* StudentLocationsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048FB2A72318D3320092CFED /* StudentLocationsResponse.swift */; };
 		048FB2AA2318E8390092CFED /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048FB2A92318E8390092CFED /* TableViewController.swift */; };
+		048FB2AC2318EA210092CFED /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048FB2AB2318EA210092CFED /* UIViewController+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		048FB2A52318CD510092CFED /* LogoutResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LogoutResponse.swift; path = UdacityResponse/LogoutResponse.swift; sourceTree = SOURCE_ROOT; };
 		048FB2A72318D3320092CFED /* StudentLocationsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StudentLocationsResponse.swift; path = UdacityResponse/StudentLocationsResponse.swift; sourceTree = SOURCE_ROOT; };
 		048FB2A92318E8390092CFED /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		048FB2AB2318EA210092CFED /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 				044A352923162EB80012892C /* LoginViewController.swift */,
 				048FB29E231793100092CFED /* MapViewController.swift */,
 				048FB2A92318E8390092CFED /* TableViewController.swift */,
+				048FB2AB2318EA210092CFED /* UIViewController+Extension.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -225,6 +228,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				048FB2A62318CD510092CFED /* LogoutResponse.swift in Sources */,
+				048FB2AC2318EA210092CFED /* UIViewController+Extension.swift in Sources */,
 				0462D2A72316524800FBB2C6 /* UdacityClient.swift in Sources */,
 				048FB29F231793100092CFED /* MapViewController.swift in Sources */,
 				048FB2AA2318E8390092CFED /* TableViewController.swift in Sources */,

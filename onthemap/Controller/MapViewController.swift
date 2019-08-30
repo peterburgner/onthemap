@@ -16,23 +16,15 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     @IBOutlet weak var addButton: UIBarButtonItem!
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var mapButton: UITabBarItem!
-    @IBOutlet weak var tableButton: UITabBarItem!
-    
+    @IBOutlet weak var tableButton: UITabBarItem!    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         UdacityClient.getStudentLocations(completion: handleStudentLocationResponse(studentLocations:error:))
     }
-    
-    @IBAction func logout(_ sender: Any) {
-        UdacityClient.logout(completion: handleLogoutResponse(success:error:))
-    }
-    @IBAction func reload(_ sender: Any) {
-    }
-    @IBAction func add(_ sender: Any) {
-    }
-    @IBOutlet weak var showTable: UITabBarItem!
+
+
     
     
     func handleStudentLocationResponse(studentLocations: [StudentLocations], error: Error?) {
@@ -118,24 +110,6 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     }
     
     
-    func handleLogoutResponse(success: Bool, error: Error?) {
-        if success {
-            performSegue(withIdentifier: "login", sender: nil)
-        } else {
-            showLogoutFailure(message: error?.localizedDescription ?? "")
-        }
-    }
-    
-    func showLogoutFailure(message: String) {
-        let alertVC = UIAlertController(title: "Logout failed", message: message, preferredStyle: .alert)
-        alertVC.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))
-        show(alertVC, sender: nil)
-    }
-    
-    func showStudentInformationFailure(message: String) {
-        let alertVC = UIAlertController(title: "Downloading student information failed", message: message, preferredStyle: .alert)
-        alertVC.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))
-        show(alertVC, sender: nil)
-    }
+
     
 }

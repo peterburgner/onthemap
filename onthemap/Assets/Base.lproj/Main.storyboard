@@ -178,7 +178,6 @@
                         <outlet property="mapButton" destination="NOF-oz-oy8" id="Sa2-gU-SPo"/>
                         <outlet property="mapView" destination="xtb-LE-aPh" id="JAP-9j-9lv"/>
                         <outlet property="reloadButton" destination="tiY-Me-jb2" id="0tY-FF-iBB"/>
-                        <outlet property="showTable" destination="jhn-Ex-j1Y" id="KNN-fA-PFl"/>
                         <outlet property="tableButton" destination="jhn-Ex-j1Y" id="Ypg-Cn-jPJ"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="login" id="dcE-kC-yNV"/>
                         <segue destination="jpy-n5-LKY" kind="show" identifier="showTable" id="zpZ-9c-uEc"/>
@@ -260,6 +259,7 @@
         <image name="logo-u" width="62" height="62"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="zpZ-9c-uEc"/>
         <segue reference="BZa-aa-f2v"/>
     </inferredMetricsTieBreakers>
 </document>
