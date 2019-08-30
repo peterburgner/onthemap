@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct LoginFailureResponse: Codable {
+struct FailureResponse: Codable {
     let statusCode: Int
     let errorMessage: String
     
@@ -18,7 +18,7 @@ struct LoginFailureResponse: Codable {
     }
 }
 
-extension LoginFailureResponse: LocalizedError {
+extension FailureResponse: LocalizedError {
     var errorDescription: String? {
         return errorMessage
     }
