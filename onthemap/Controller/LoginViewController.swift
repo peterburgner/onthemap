@@ -18,6 +18,8 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        emailField.textContentType = .username
+        passwordField.textContentType = .password
     }
     
     @IBAction func login(_ sender: Any) {

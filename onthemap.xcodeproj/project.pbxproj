@@ -188,6 +188,11 @@
 				TargetAttributes = {
 					044A352323162EB80012892C = {
 						CreatedOnToolsVersion = 10.3;
+						SystemCapabilities = {
+							com.apple.SafariKeychain = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -383,6 +388,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = onthemap/onthemap.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5W7XV2RU7S;
 				INFOPLIST_FILE = onthemap/Info.plist;
@@ -401,6 +407,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = onthemap/onthemap.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5W7XV2RU7S;
 				INFOPLIST_FILE = onthemap/Info.plist;
