@@ -36,42 +36,49 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     
     
     func handleStudentLocationResponse(studentLocations: [StudentLocations], error: Error?) {
-        print(studentLocations)
         
-        // We will create an MKPointAnnotation for each dictionary in "locations". The
-        // point annotations will be stored in this array, and then provided to the map view.
-        var annotations = [MKPointAnnotation]()
-        
-        // The "locations" array is loaded with the sample data below. We are using the dictionaries
-        // to create map annotations. This would be more stylish if the dictionaries were being
-        // used to create custom structs. Perhaps StudentLocation structs.
-        
-        for studentLocation in studentLocations {
+        if error != nil {
+            showStudentInformationFailure(message:error?.localizedDescription ?? "")
+        } else
+        {
             
-            // Notice that the float values are being used to create CLLocationDegree values.
-            // This is a version of the Double type.
-            let lat = CLLocationDegrees(studentLocation.latitude)
-            let long = CLLocationDegrees(studentLocation.longitude)
+            print(studentLocations)
             
-            // The lat and long are used to create a CLLocationCoordinates2D instance.
-            let coordinate = CLLocationCoordinate2D(latitude: lat, longitude: long)
+            // We will create an MKPointAnnotation for each dictionary in "locations". The
+            // point annotations will be stored in this array, and then provided to the map view.
+            var annotations = [MKPointAnnotation]()
             
-            let first = studentLocation.firstName
-            let last = studentLocation.lastName
-            let mediaURL = studentLocation.mediaURL
+            // The "locations" array is loaded with the sample data below. We are using the dictionaries
+            // to create map annotations. This would be more stylish if the dictionaries were being
+            // used to create custom structs. Perhaps StudentLocation structs.
             
-            // Here we create the annotation and set its coordiate, title, and subtitle properties
-            let annotation = MKPointAnnotation()
-            annotation.coordinate = coordinate
-            annotation.title = "\(first) \(last)"
-            annotation.subtitle = mediaURL
+            for studentLocation in studentLocations {
+                
+                // Notice that the float values are being used to create CLLocationDegree values.
+                // This is a version of the Double type.
+                let lat = CLLocationDegrees(studentLocation.latitude)
+                let long = CLLocationDegrees(studentLocation.longitude)
+                
+                // The lat and long are used to create a CLLocationCoordinates2D instance.
+                let coordinate = CLLocationCoordinate2D(latitude: lat, longitude: long)
+                
+                let first = studentLocation.firstName
+                let last = studentLocation.lastName
+                let mediaURL = studentLocation.mediaURL
+                
+                // Here we create the annotation and set its coordiate, title, and subtitle properties
+                let annotation = MKPointAnnotation()
+                annotation.coordinate = coordinate
+                annotation.title = "\(first) \(last)"
+                annotation.subtitle = mediaURL
+                
+                // Finally we place the annotation in an array of annotations.
+                annotations.append(annotation)
+            }
             
-            // Finally we place the annotation in an array of annotations.
-            annotations.append(annotation)
+            // When the array is complete, we add the annotations to the map.
+            self.mapView.addAnnotations(annotations)
         }
-        
-        // When the array is complete, we add the annotations to the map.
-        self.mapView.addAnnotations(annotations)
         
     }
     
@@ -121,6 +128,12 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     
     func showLogoutFailure(message: String) {
         let alertVC = UIAlertController(title: "Logout failed", message: message, preferredStyle: .alert)
+        alertVC.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))
+        show(alertVC, sender: nil)
+    }
+    
+    func showStudentInformationFailure(message: String) {
+        let alertVC = UIAlertController(title: "Downloading student information failed", message: message, preferredStyle: .alert)
         alertVC.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))
         show(alertVC, sender: nil)
     }
