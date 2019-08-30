@@ -8,6 +8,11 @@
 
 import UIKit
 
-class TableViewController: UIViewController {
+class TableViewController: UIViewController, UITabBarDelegate {
+    
+    @IBOutlet weak var logoutButton: UIBarButtonItem!
+    @IBOutlet weak var reloadButton: UIBarButtonItem!
+    @IBOutlet weak var addButton: UIBarButtonItem!
+    
     
 }

@@ -9,14 +9,13 @@
 import UIKit
 import MapKit
 
-class MapViewController: UIViewController, MKMapViewDelegate {
+class MapViewController: UIViewController, MKMapViewDelegate, UITabBarDelegate {
     
     @IBOutlet weak var logoutButton: UIBarButtonItem!
     @IBOutlet weak var reloadButton: UIBarButtonItem!
     @IBOutlet weak var addButton: UIBarButtonItem!
     @IBOutlet weak var mapView: MKMapView!
-    @IBOutlet weak var mapButton: UITabBarItem!
-    @IBOutlet weak var tableButton: UITabBarItem!    
+   
     
     
     override func viewDidLoad() {
@@ -24,9 +23,6 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         UdacityClient.getStudentLocations(completion: handleStudentLocationResponse(studentLocations:error:))
     }
 
-
-    
-    
     func handleStudentLocationResponse(studentLocations: [StudentLocations], error: Error?) {
         
         if error != nil {

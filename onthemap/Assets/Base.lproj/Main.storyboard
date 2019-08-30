@@ -103,163 +103,145 @@
                         <outlet property="loginButton" destination="D8h-8J-d4P" id="vwS-5f-uXr"/>
                         <outlet property="passwordField" destination="lte-MH-LgR" id="AQG-wJ-OYY"/>
                         <outlet property="signupButton" destination="yE7-BV-tc4" id="D3k-8P-cVS"/>
-                        <segue destination="mkD-i5-ggn" kind="show" identifier="showMap" id="rTj-4u-slf"/>
+                        <segue destination="Png-Zt-SXN" kind="show" identifier="showMap" id="uQN-WP-5BB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
+            <point key="canvasLocation" x="-61" y="-668"/>
         </scene>
-        <!--Map View Controller-->
-        <scene sceneID="FkF-yd-I8n">
+        <!--Table View Controller-->
+        <scene sceneID="JG7-29-Qr5">
             <objects>
-                <viewController id="mkD-i5-ggn" customClass="MapViewController" customModule="onthemap" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="aWT-O6-rrv">
+                <viewController id="OA3-gD-Oll" customClass="TableViewController" customModule="onthemap" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Fi8-jq-gjU">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YbI-ok-Bdi">
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ul2-1P-L1z">
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
-                                    <navigationItem title="On the Map" id="5My-vE-ChS">
-                                        <barButtonItem key="leftBarButtonItem" title="Logout" id="hdj-Vl-9wi">
+                                    <navigationItem title="On the Map" id="P8l-XK-SlD">
+                                        <barButtonItem key="leftBarButtonItem" title="Logout" id="pJs-Dn-31V">
                                             <connections>
-                                                <action selector="logout:" destination="mkD-i5-ggn" id="SNw-kc-SDs"/>
+                                                <action selector="logout:" destination="OA3-gD-Oll" id="BIZ-UK-JqN"/>
                                             </connections>
                                         </barButtonItem>
                                         <rightBarButtonItems>
-                                            <barButtonItem systemItem="add" id="ZyD-Ka-1B2">
+                                            <barButtonItem systemItem="add" id="E67-7V-fox">
                                                 <connections>
-                                                    <action selector="add:" destination="mkD-i5-ggn" id="IML-rl-2pM"/>
+                                                    <action selector="add:" destination="OA3-gD-Oll" id="jEu-H6-CI9"/>
                                                 </connections>
                                             </barButtonItem>
-                                            <barButtonItem title="Reload" image="icon_refresh" id="tiY-Me-jb2">
+                                            <barButtonItem title="Reload" image="icon_refresh" id="y4k-0j-K5P">
                                                 <connections>
-                                                    <action selector="reload:" destination="mkD-i5-ggn" id="KU9-MI-efI"/>
+                                                    <action selector="reload:" destination="OA3-gD-Oll" id="D2U-oN-3e5"/>
                                                 </connections>
                                             </barButtonItem>
                                         </rightBarButtonItems>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jjs-UH-PFL">
-                                <rect key="frame" x="0.0" y="813" width="414" height="83"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="t8R-pg-OSt"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="icon_listview-selected" id="pj2-kW-wEb"/>
+                    <connections>
+                        <outlet property="addButton" destination="E67-7V-fox" id="PSv-co-Ssf"/>
+                        <outlet property="logoutButton" destination="pJs-Dn-31V" id="ceO-XM-O49"/>
+                        <outlet property="reloadButton" destination="y4k-0j-K5P" id="eUY-zY-Jdn"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="login" id="Q60-mt-H4Y"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="G1p-je-1tK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2038" y="-414"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="icx-cc-8ZL">
+            <objects>
+                <viewController id="pHZ-xu-bT6" customClass="MapViewController" customModule="onthemap" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="auv-Eu-5ZO">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bNT-bA-95Y">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
-                                    <tabBarItem title="" image="icon_mapview-selected" selectedImage="icon_mapview-selected" id="NOF-oz-oy8"/>
-                                    <tabBarItem title="" image="icon_listview-deselected" id="jhn-Ex-j1Y"/>
+                                    <navigationItem title="On the Map" id="lQX-Aq-yUN">
+                                        <barButtonItem key="leftBarButtonItem" title="Logout" id="uge-qd-K5i">
+                                            <connections>
+                                                <action selector="logout:" destination="pHZ-xu-bT6" id="QGA-iK-EGS"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <rightBarButtonItems>
+                                            <barButtonItem systemItem="add" id="Lx2-ma-rm3">
+                                                <connections>
+                                                    <action selector="add:" destination="pHZ-xu-bT6" id="J3s-eg-8eB"/>
+                                                </connections>
+                                            </barButtonItem>
+                                            <barButtonItem title="Reload" image="icon_refresh" id="SjM-mH-HU8">
+                                                <connections>
+                                                    <action selector="reload:" destination="pHZ-xu-bT6" id="pzc-or-bVz"/>
+                                                </connections>
+                                            </barButtonItem>
+                                        </rightBarButtonItems>
+                                    </navigationItem>
                                 </items>
-                            </tabBar>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="xtb-LE-aPh">
+                            </navigationBar>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="81M-io-DD7">
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
-                                    <outlet property="delegate" destination="mkD-i5-ggn" id="oGs-Ad-TpZ"/>
+                                    <outlet property="delegate" destination="auv-Eu-5ZO" id="f26-Tr-feh"/>
                                 </connections>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="oAe-Ic-MON" firstAttribute="trailing" secondItem="xtb-LE-aPh" secondAttribute="trailing" id="0cm-jd-r7o"/>
-                            <constraint firstAttribute="bottom" secondItem="Jjs-UH-PFL" secondAttribute="bottom" id="2gm-eH-Q97"/>
-                            <constraint firstItem="xtb-LE-aPh" firstAttribute="top" secondItem="YbI-ok-Bdi" secondAttribute="bottom" id="4Me-bc-s0e"/>
-                            <constraint firstItem="Jjs-UH-PFL" firstAttribute="trailing" secondItem="YbI-ok-Bdi" secondAttribute="trailing" id="4TA-px-SlT"/>
-                            <constraint firstItem="Jjs-UH-PFL" firstAttribute="top" secondItem="xtb-LE-aPh" secondAttribute="bottom" id="Ch2-qK-eKR"/>
-                            <constraint firstItem="xtb-LE-aPh" firstAttribute="leading" secondItem="oAe-Ic-MON" secondAttribute="leading" id="bmU-2B-WCm"/>
-                            <constraint firstItem="Jjs-UH-PFL" firstAttribute="leading" secondItem="xtb-LE-aPh" secondAttribute="leading" id="cdK-wZ-o29"/>
-                            <constraint firstItem="Jjs-UH-PFL" firstAttribute="trailing" secondItem="xtb-LE-aPh" secondAttribute="trailing" id="hVG-DX-5WM"/>
-                            <constraint firstItem="YbI-ok-Bdi" firstAttribute="top" secondItem="oAe-Ic-MON" secondAttribute="top" id="rbe-6F-JlQ"/>
-                            <constraint firstItem="Jjs-UH-PFL" firstAttribute="leading" secondItem="YbI-ok-Bdi" secondAttribute="leading" id="vFF-OC-Xrr"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="oAe-Ic-MON"/>
+                        <viewLayoutGuide key="safeArea" id="xUt-jm-aXZ"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="" image="icon_mapview-selected" id="dWm-XR-gT6"/>
                     <connections>
-                        <outlet property="addButton" destination="ZyD-Ka-1B2" id="BVq-Ye-3Bn"/>
-                        <outlet property="logoutButton" destination="hdj-Vl-9wi" id="sY3-Ep-30u"/>
-                        <outlet property="mapButton" destination="NOF-oz-oy8" id="Sa2-gU-SPo"/>
-                        <outlet property="mapView" destination="xtb-LE-aPh" id="JAP-9j-9lv"/>
-                        <outlet property="reloadButton" destination="tiY-Me-jb2" id="0tY-FF-iBB"/>
-                        <outlet property="tableButton" destination="jhn-Ex-j1Y" id="Ypg-Cn-jPJ"/>
-                        <segue destination="BYZ-38-t0r" kind="show" identifier="login" id="dcE-kC-yNV"/>
-                        <segue destination="jpy-n5-LKY" kind="show" identifier="showTable" id="zpZ-9c-uEc"/>
+                        <outlet property="addButton" destination="Lx2-ma-rm3" id="QP3-xo-yxb"/>
+                        <outlet property="logoutButton" destination="uge-qd-K5i" id="UJw-Az-xID"/>
+                        <outlet property="mapView" destination="81M-io-DD7" id="q7K-8L-EuN"/>
+                        <outlet property="reloadButton" destination="SjM-mH-HU8" id="Shw-gn-3Sa"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="login" id="mop-FR-YP0"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0rD-3B-aHF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9es-WE-Mlq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="968.11594202898561" y="139.95535714285714"/>
+            <point key="canvasLocation" x="2020" y="-1118"/>
         </scene>
-        <!--Table View Controller-->
-        <scene sceneID="ubT-di-KpJ">
+        <!--Tab Bar Controller-->
+        <scene sceneID="FnY-nb-oxq">
             <objects>
-                <viewController id="jpy-n5-LKY" customClass="TableViewController" customModule="onthemap" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="GdX-AB-gy8">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <navigationBar contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wNy-Da-DgE">
-                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                                <items>
-                                    <navigationItem title="On the Map" id="TII-e9-JVK">
-                                        <barButtonItem key="leftBarButtonItem" title="Logout" id="PE7-tV-KUq">
-                                            <connections>
-                                                <action selector="logout:" destination="jpy-n5-LKY" id="ij9-hy-JHN"/>
-                                            </connections>
-                                        </barButtonItem>
-                                        <rightBarButtonItems>
-                                            <barButtonItem systemItem="add" id="jEn-a3-yzD">
-                                                <connections>
-                                                    <action selector="add:" destination="jpy-n5-LKY" id="LqC-rI-lVP"/>
-                                                </connections>
-                                            </barButtonItem>
-                                            <barButtonItem title="Reload" image="icon_refresh" id="StQ-y5-XDR">
-                                                <connections>
-                                                    <action selector="reload:" destination="jpy-n5-LKY" id="XqB-Hy-BUq"/>
-                                                </connections>
-                                            </barButtonItem>
-                                        </rightBarButtonItems>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                            <tabBar contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OoS-vW-yxd">
-                                <rect key="frame" x="0.0" y="813" width="414" height="83"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <items>
-                                    <tabBarItem title="" image="icon_mapview-selected" selectedImage="icon_mapview-selected" id="WY9-lE-Lh8"/>
-                                    <tabBarItem title="" image="icon_listview-deselected" id="3ei-G8-zUt"/>
-                                </items>
-                            </tabBar>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="wNy-Da-DgE" firstAttribute="top" secondItem="b1W-ND-O5W" secondAttribute="top" id="HGd-B4-SZd"/>
-                            <constraint firstItem="OoS-vW-yxd" firstAttribute="trailing" secondItem="wNy-Da-DgE" secondAttribute="trailing" id="LBQ-l1-AYf"/>
-                            <constraint firstAttribute="bottom" secondItem="OoS-vW-yxd" secondAttribute="bottom" id="M9l-da-utJ"/>
-                            <constraint firstItem="OoS-vW-yxd" firstAttribute="leading" secondItem="wNy-Da-DgE" secondAttribute="leading" id="qdb-VI-zSD"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="b1W-ND-O5W"/>
-                    </view>
+                <tabBarController id="Png-Zt-SXN" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="fMj-Fi-oDG">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
                     <connections>
-                        <outlet property="addButton" destination="jEn-a3-yzD" id="OAG-Rm-DRd"/>
-                        <outlet property="logoutButton" destination="PE7-tV-KUq" id="YSc-ho-eYQ"/>
-                        <outlet property="mapButton" destination="WY9-lE-Lh8" id="t6y-W6-TLo"/>
-                        <outlet property="reloadButton" destination="StQ-y5-XDR" id="Lzl-ZI-94E"/>
-                        <outlet property="showTable" destination="3ei-G8-zUt" id="1Xk-y2-SzS"/>
-                        <outlet property="tableButton" destination="3ei-G8-zUt" id="7P0-a3-YNe"/>
-                        <segue destination="mkD-i5-ggn" kind="show" identifier="showLoadedMap" id="BZa-aa-f2v"/>
+                        <segue destination="pHZ-xu-bT6" kind="relationship" relationship="viewControllers" id="cAg-ET-UDS"/>
+                        <segue destination="OA3-gD-Oll" kind="relationship" relationship="viewControllers" id="w5t-tJ-RRo"/>
                     </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="W3l-U3-BjU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gMm-sv-lCg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1878" y="140"/>
+            <point key="canvasLocation" x="913" y="-668"/>
         </scene>
     </scenes>
     <resources>
-        <image name="icon_listview-deselected" width="75" height="50"/>
+        <image name="icon_listview-selected" width="75" height="50"/>
         <image name="icon_mapview-selected" width="75" height="50"/>
         <image name="icon_refresh" width="24" height="24"/>
         <image name="logo-u" width="62" height="62"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="zpZ-9c-uEc"/>
-        <segue reference="BZa-aa-f2v"/>
+        <segue reference="Q60-mt-H4Y"/>
     </inferredMetricsTieBreakers>
 </document>
