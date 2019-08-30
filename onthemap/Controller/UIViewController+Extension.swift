@@ -38,7 +38,7 @@ extension UIViewController {
     }
     
     func showStudentInformationFailure(message: String) {
-        let alertVC = UIAlertController(title: "Downloading student information failed", message: message, preferredStyle: .alert)
+        let alertVC = UIAlertController(title: "Download of Student Information failed", message: message, preferredStyle: .alert)
         alertVC.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))
         show(alertVC, sender: nil)
     }
