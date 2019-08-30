@@ -17,18 +17,23 @@ class TableViewController: UIViewController, UITabBarDelegate, UITableViewDelega
     @IBOutlet weak var addButton: UIBarButtonItem!
     @IBOutlet weak var table: UITableView!
     
+    var cell = UITableViewCell(style: .subtitle, reuseIdentifier: "studentInformation")
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return UdacityClient.studentLocation.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "studentInformation", for: indexPath)
+        cell = tableView.dequeueReusableCell(withIdentifier: "studentInformation", for: indexPath)
         
         let currentStudent = UdacityClient.studentLocation[indexPath.row]
         
         cell.imageView?.image = UIImage(named: "icon_pin")
         cell.textLabel?.text = currentStudent.firstName + " " + currentStudent.lastName
         
+        if let detailTextLabel = cell.detailTextLabel {
+            detailTextLabel.text = currentStudent.mediaURL
+        }
         
         return cell
     }
