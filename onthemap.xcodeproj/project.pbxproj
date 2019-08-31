@@ -31,13 +31,13 @@
 		044A352E23162EBB0012892C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		044A353123162EBB0012892C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		044A353323162EBB0012892C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0462D2A42316515300FBB2C6 /* LoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginButton.swift; path = onthemap/LoginButton.swift; sourceTree = SOURCE_ROOT; };
-		0462D2A62316524800FBB2C6 /* UdacityClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UdacityClient.swift; path = onthemap/UdacityClient.swift; sourceTree = SOURCE_ROOT; };
-		048FB29C2317868F0092CFED /* FailureResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FailureResponse.swift; path = onthemap/FailureResponse.swift; sourceTree = SOURCE_ROOT; };
+		0462D2A42316515300FBB2C6 /* LoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginButton.swift; path = onthemap/View/LoginButton.swift; sourceTree = SOURCE_ROOT; };
+		0462D2A62316524800FBB2C6 /* UdacityClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UdacityClient.swift; path = onthemap/Model/Udacity/UdacityClient/UdacityClient.swift; sourceTree = SOURCE_ROOT; };
+		048FB29C2317868F0092CFED /* FailureResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FailureResponse.swift; path = onthemap/Model/Udacity/UdacityResponse/FailureResponse.swift; sourceTree = SOURCE_ROOT; };
 		048FB29E231793100092CFED /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
-		048FB2A023179D2E0092CFED /* LoggedInResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoggedInResponse.swift; path = onthemap/Controller/LoggedInResponse.swift; sourceTree = SOURCE_ROOT; };
-		048FB2A52318CD510092CFED /* LogoutResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LogoutResponse.swift; path = UdacityResponse/LogoutResponse.swift; sourceTree = SOURCE_ROOT; };
-		048FB2A72318D3320092CFED /* StudentLocationsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StudentLocationsResponse.swift; path = UdacityResponse/StudentLocationsResponse.swift; sourceTree = SOURCE_ROOT; };
+		048FB2A023179D2E0092CFED /* LoggedInResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoggedInResponse.swift; path = onthemap/Model/Udacity/UdacityResponse/LoggedInResponse.swift; sourceTree = SOURCE_ROOT; };
+		048FB2A52318CD510092CFED /* LogoutResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LogoutResponse.swift; path = onthemap/Model/Udacity/UdacityResponse/LogoutResponse.swift; sourceTree = SOURCE_ROOT; };
+		048FB2A72318D3320092CFED /* StudentLocationsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StudentLocationsResponse.swift; path = onthemap/Model/Udacity/UdacityResponse/StudentLocationsResponse.swift; sourceTree = SOURCE_ROOT; };
 		048FB2A92318E8390092CFED /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		048FB2AB2318EA210092CFED /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -72,11 +72,11 @@
 		044A352623162EB80012892C /* onthemap */ = {
 			isa = PBXGroup;
 			children = (
+				04D836BB231A4F8900828A99 /* View */,
+				04CFFE4C231A4E2C00581D32 /* Model */,
 				044A352723162EB80012892C /* AppDelegate.swift */,
 				044A353323162EBB0012892C /* Info.plist */,
-				044A354523164B6D0012892C /* Model */,
 				044A354323164B410012892C /* Controller */,
-				044A354623164B7D0012892C /* View */,
 				044A354423164B580012892C /* Assets */,
 				044A352523162EB80012892C /* Products */,
 			);
@@ -104,33 +104,24 @@
 			path = Assets;
 			sourceTree = "<group>";
 		};
-		044A354523164B6D0012892C /* Model */ = {
+		04CFFE4C231A4E2C00581D32 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				044A354723164BC80012892C /* Udacity */,
+				04CFFE4D231A4E3500581D32 /* Udacity */,
 			);
 			path = Model;
 			sourceTree = "<group>";
 		};
-		044A354623164B7D0012892C /* View */ = {
+		04CFFE4D231A4E3500581D32 /* Udacity */ = {
 			isa = PBXGroup;
 			children = (
-				0462D2A42316515300FBB2C6 /* LoginButton.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		044A354723164BC80012892C /* Udacity */ = {
-			isa = PBXGroup;
-			children = (
-				044A354823164BCF0012892C /* UdacityClient */,
-				044A354923164BD60012892C /* UdacityRequest */,
-				044A354A23164BEB0012892C /* UdacityResponse */,
+				04CFFE50231A4E4C00581D32 /* UdacityResponse */,
+				04CFFE4E231A4E3D00581D32 /* UdacityClient */,
 			);
 			path = Udacity;
 			sourceTree = "<group>";
 		};
-		044A354823164BCF0012892C /* UdacityClient */ = {
+		04CFFE4E231A4E3D00581D32 /* UdacityClient */ = {
 			isa = PBXGroup;
 			children = (
 				0462D2A62316524800FBB2C6 /* UdacityClient.swift */,
@@ -138,14 +129,7 @@
 			path = UdacityClient;
 			sourceTree = "<group>";
 		};
-		044A354923164BD60012892C /* UdacityRequest */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = UdacityRequest;
-			sourceTree = "<group>";
-		};
-		044A354A23164BEB0012892C /* UdacityResponse */ = {
+		04CFFE50231A4E4C00581D32 /* UdacityResponse */ = {
 			isa = PBXGroup;
 			children = (
 				048FB29C2317868F0092CFED /* FailureResponse.swift */,
@@ -154,6 +138,14 @@
 				048FB2A72318D3320092CFED /* StudentLocationsResponse.swift */,
 			);
 			path = UdacityResponse;
+			sourceTree = "<group>";
+		};
+		04D836BB231A4F8900828A99 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0462D2A42316515300FBB2C6 /* LoginButton.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
