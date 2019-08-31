@@ -16,8 +16,6 @@ extension UIViewController {
         UdacityClient.logout(completion: handleLogoutResponse(success:error:))
     }
     
-    @IBAction func reload(_ sender: Any) {
-    }
     @IBAction func add(_ sender: Any) {
     }
     

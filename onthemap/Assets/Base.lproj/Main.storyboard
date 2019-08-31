@@ -136,7 +136,7 @@
                                             </barButtonItem>
                                             <barButtonItem title="Reload" image="icon_refresh" id="y4k-0j-K5P">
                                                 <connections>
-                                                    <action selector="reload:" destination="OA3-gD-Oll" id="D2U-oN-3e5"/>
+                                                    <action selector="reload:" destination="OA3-gD-Oll" id="sHT-HY-x08"/>
                                                 </connections>
                                             </barButtonItem>
                                         </rightBarButtonItems>

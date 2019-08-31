@@ -22,6 +22,10 @@ class MapViewController: UIViewController, MKMapViewDelegate, UITabBarDelegate {
         super.viewDidLoad()
         UdacityClient.getStudentLocations(completion: handleStudentLocationResponse(studentLocations:error:))
     }
+    
+    @IBAction func reload(_ sender: Any) {
+        UdacityClient.getStudentLocations(completion: handleStudentLocationResponse(studentLocations:error:))
+    }
 
     func handleStudentLocationResponse(studentLocations: [StudentLocations], error: Error?) {
         

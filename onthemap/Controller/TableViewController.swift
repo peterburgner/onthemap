@@ -19,6 +19,20 @@ class TableViewController: UIViewController, UITabBarDelegate, UITableViewDelega
     
     var cell = UITableViewCell(style: .subtitle, reuseIdentifier: "studentInformation")
     
+    @IBAction func reload(_ sender: Any) {
+        UdacityClient.getStudentLocations(completion: handleStudentLocationResponse(studentLocations:error:))
+    }
+    
+    func handleStudentLocationResponse(studentLocations: [StudentLocations], error: Error?) {
+        if error != nil {
+            showStudentInformationFailure(message:error?.localizedDescription ?? "")
+        } else
+        {
+            UdacityClient.studentLocation = studentLocations
+            table.reloadData()
+        }
+    }
+        
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return UdacityClient.studentLocation.count
     }
