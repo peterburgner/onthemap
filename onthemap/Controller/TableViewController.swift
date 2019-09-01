@@ -19,8 +19,32 @@ class TableViewController: UIViewController, UITabBarDelegate, UITableViewDelega
     
     var cell = UITableViewCell(style: .subtitle, reuseIdentifier: "studentInformation")
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        configureRefreshControl()
+    }
+    
+    
+    // MARK: IBactions
     @IBAction func reload(_ sender: Any) {
-        UdacityClient.getStudentLocations(completion: handleStudentLocationResponse(studentLocations:error:))
+        UdacityClient.getStudentLocations(completion: handleStudentLocationResponse(studentLocations:error:))    }
+    
+    
+    // MARK: Functions
+    func configureRefreshControl () {
+        // Add the refresh control to your UIScrollView object.
+        table.refreshControl = UIRefreshControl()
+        table.refreshControl?.addTarget(self, action:
+            #selector(handleRefreshControl),
+                                                  for: .valueChanged)
+    }
+    
+    @objc func handleRefreshControl() {
+        reload(self)
+        
+        DispatchQueue.main.async {
+            self.table.refreshControl?.endRefreshing()
+        }
     }
     
     func handleStudentLocationResponse(studentLocations: [StudentLocations], error: Error?) {
