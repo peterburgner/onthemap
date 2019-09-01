@@ -285,6 +285,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="leP-Vm-aHD" customClass="UdacityButton" customModule="onthemap" customModuleProvider="target">
                                 <rect key="frame" x="58" y="407" width="298" height="30"/>
                                 <state key="normal" title="Find Location"/>
+                                <connections>
+                                    <action selector="findLocation:" destination="sOo-f0-LHv" eventType="touchUpInside" id="RfT-Xq-3s7"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="City, State" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="dPf-AY-oSo">
                                 <rect key="frame" x="58" y="287" width="298" height="30"/>
@@ -332,17 +335,19 @@
                         <viewLayoutGuide key="safeArea" id="Xb8-uR-sMp"/>
                     </view>
                     <connections>
-                        <segue destination="Vc0-Tx-ADA" kind="presentation" identifier="finishAddingLocation" id="rPW-je-2rl"/>
+                        <outlet property="location" destination="dPf-AY-oSo" id="7YT-sD-TaP"/>
+                        <outlet property="url" destination="xQb-uq-ZVP" id="VTy-AK-g2t"/>
+                        <segue destination="Vc0-Tx-ADA" kind="presentation" identifier="postLocation" id="rPW-je-2rl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1ES-Mn-Lx8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3098.5507246376815" y="-800.22321428571422"/>
         </scene>
-        <!--View Controller-->
+        <!--Post Location-->
         <scene sceneID="QdO-pO-KLi">
             <objects>
-                <viewController id="Vc0-Tx-ADA" sceneMemberID="viewController">
+                <viewController id="Vc0-Tx-ADA" customClass="PostLocation" customModule="onthemap" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ly2-Sc-A9I">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -352,7 +357,11 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Add Location" id="44d-4f-q9C">
-                                        <barButtonItem key="leftBarButtonItem" title="Edit" id="XtB-B8-Fdm"/>
+                                        <barButtonItem key="leftBarButtonItem" title="Edit" id="XtB-B8-Fdm">
+                                            <connections>
+                                                <segue destination="sOo-f0-LHv" kind="presentation" id="JD1-fE-9eo"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -392,7 +401,7 @@
         <image name="logo-u" width="62" height="62"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="6ve-cb-Ol7"/>
+        <segue reference="JD1-fE-9eo"/>
         <segue reference="Q60-mt-H4Y"/>
     </inferredMetricsTieBreakers>
 </document>

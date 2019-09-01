@@ -7,12 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		042ADC6B231C797C00F01DA0 /* UdacityStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042ADC6A231C797C00F01DA0 /* UdacityStyle.swift */; };
+		042ADC6D231C85BC00F01DA0 /* PostLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042ADC6C231C85BC00F01DA0 /* PostLocation.swift */; };
 		044A352823162EB80012892C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044A352723162EB80012892C /* AppDelegate.swift */; };
 		044A352A23162EB80012892C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044A352923162EB80012892C /* LoginViewController.swift */; };
 		044A352D23162EB80012892C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 044A352B23162EB80012892C /* Main.storyboard */; };
 		044A352F23162EBB0012892C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 044A352E23162EBB0012892C /* Assets.xcassets */; };
 		044A353223162EBB0012892C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 044A353023162EBB0012892C /* LaunchScreen.storyboard */; };
-		0462D2A52316515300FBB2C6 /* LoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0462D2A42316515300FBB2C6 /* LoginButton.swift */; };
+		0462D2A52316515300FBB2C6 /* UdacityButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0462D2A42316515300FBB2C6 /* UdacityButton.swift */; };
 		0462D2A72316524800FBB2C6 /* UdacityClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0462D2A62316524800FBB2C6 /* UdacityClient.swift */; };
 		048FB29D2317868F0092CFED /* FailureResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048FB29C2317868F0092CFED /* FailureResponse.swift */; };
 		048FB29F231793100092CFED /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048FB29E231793100092CFED /* MapViewController.swift */; };
@@ -25,6 +27,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		042ADC6A231C797C00F01DA0 /* UdacityStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UdacityStyle.swift; sourceTree = "<group>"; };
+		042ADC6C231C85BC00F01DA0 /* PostLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostLocation.swift; sourceTree = "<group>"; };
 		044A352423162EB80012892C /* onthemap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = onthemap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		044A352723162EB80012892C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		044A352923162EB80012892C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -32,7 +36,7 @@
 		044A352E23162EBB0012892C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		044A353123162EBB0012892C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		044A353323162EBB0012892C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0462D2A42316515300FBB2C6 /* LoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginButton.swift; path = onthemap/View/LoginButton.swift; sourceTree = SOURCE_ROOT; };
+		0462D2A42316515300FBB2C6 /* UdacityButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UdacityButton.swift; path = onthemap/View/UdacityButton.swift; sourceTree = SOURCE_ROOT; };
 		0462D2A62316524800FBB2C6 /* UdacityClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UdacityClient.swift; path = onthemap/Model/Udacity/UdacityClient/UdacityClient.swift; sourceTree = SOURCE_ROOT; };
 		048FB29C2317868F0092CFED /* FailureResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FailureResponse.swift; path = onthemap/Model/Udacity/UdacityResponse/FailureResponse.swift; sourceTree = SOURCE_ROOT; };
 		048FB29E231793100092CFED /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -93,6 +97,7 @@
 				048FB2A92318E8390092CFED /* TableViewController.swift */,
 				048FB2AB2318EA210092CFED /* UIViewController+Extension.swift */,
 				04D836BC231A512100828A99 /* AddLocationViewController.swift */,
+				042ADC6C231C85BC00F01DA0 /* PostLocation.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -146,7 +151,8 @@
 		04D836BB231A4F8900828A99 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				0462D2A42316515300FBB2C6 /* LoginButton.swift */,
+				0462D2A42316515300FBB2C6 /* UdacityButton.swift */,
+				042ADC6A231C797C00F01DA0 /* UdacityStyle.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -229,11 +235,13 @@
 			files = (
 				048FB2A62318CD510092CFED /* LogoutResponse.swift in Sources */,
 				048FB2AC2318EA210092CFED /* UIViewController+Extension.swift in Sources */,
+				042ADC6D231C85BC00F01DA0 /* PostLocation.swift in Sources */,
 				0462D2A72316524800FBB2C6 /* UdacityClient.swift in Sources */,
 				048FB29F231793100092CFED /* MapViewController.swift in Sources */,
+				042ADC6B231C797C00F01DA0 /* UdacityStyle.swift in Sources */,
 				048FB2AA2318E8390092CFED /* TableViewController.swift in Sources */,
 				044A352A23162EB80012892C /* LoginViewController.swift in Sources */,
-				0462D2A52316515300FBB2C6 /* LoginButton.swift in Sources */,
+				0462D2A52316515300FBB2C6 /* UdacityButton.swift in Sources */,
 				04D836BD231A512100828A99 /* AddLocationViewController.swift in Sources */,
 				044A352823162EB80012892C /* AppDelegate.swift in Sources */,
 				048FB2A82318D3320092CFED /* StudentLocationsResponse.swift in Sources */,
