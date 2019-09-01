@@ -284,7 +284,7 @@
                             </navigationBar>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="leP-Vm-aHD" customClass="UdacityButton" customModule="onthemap" customModuleProvider="target">
                                 <rect key="frame" x="58" y="407" width="298" height="30"/>
-                                <state key="normal" title="Find Location"/>
+                                <state key="normal" title="FIND LOCATION"/>
                                 <connections>
                                     <action selector="findLocation:" destination="sOo-f0-LHv" eventType="touchUpInside" id="RfT-Xq-3s7"/>
                                 </connections>
@@ -352,9 +352,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tAV-rt-Pyj">
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tAV-rt-Pyj">
                                 <rect key="frame" x="0.0" y="58" width="414" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Add Location" id="44d-4f-q9C">
                                         <barButtonItem key="leftBarButtonItem" title="Edit" id="XtB-B8-Fdm">
@@ -365,14 +364,33 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="pWD-Ld-cpI">
+                                <rect key="frame" x="0.0" y="102" width="414" height="760"/>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cg3-B9-cQf" customClass="UdacityButton" customModule="onthemap" customModuleProvider="target">
+                                <rect key="frame" x="58" y="772" width="298" height="30"/>
+                                <state key="normal" title="FINISH"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="tAV-rt-Pyj" firstAttribute="leading" secondItem="pWD-Ld-cpI" secondAttribute="leading" id="VQl-DQ-QK5"/>
+                            <constraint firstItem="pWD-Ld-cpI" firstAttribute="top" secondItem="tAV-rt-Pyj" secondAttribute="bottom" id="VRE-qf-clS"/>
+                            <constraint firstItem="pWD-Ld-cpI" firstAttribute="trailing" secondItem="wTW-9Q-Fwb" secondAttribute="trailing" id="Wph-qW-3px"/>
+                            <constraint firstItem="wTW-9Q-Fwb" firstAttribute="bottom" secondItem="cg3-B9-cQf" secondAttribute="bottom" constant="60" id="dLl-bn-rAi"/>
+                            <constraint firstItem="tAV-rt-Pyj" firstAttribute="top" secondItem="wTW-9Q-Fwb" secondAttribute="top" constant="14" id="fhW-eq-4se"/>
+                            <constraint firstItem="pWD-Ld-cpI" firstAttribute="bottom" secondItem="wTW-9Q-Fwb" secondAttribute="bottom" id="hDd-XW-Jlp"/>
+                            <constraint firstItem="pWD-Ld-cpI" firstAttribute="leading" secondItem="wTW-9Q-Fwb" secondAttribute="leading" id="liX-y4-kmP"/>
+                            <constraint firstItem="tAV-rt-Pyj" firstAttribute="trailing" secondItem="pWD-Ld-cpI" secondAttribute="trailing" id="ntY-Gd-GaB"/>
+                            <constraint firstItem="cg3-B9-cQf" firstAttribute="leading" secondItem="wTW-9Q-Fwb" secondAttribute="leading" constant="58" id="vcL-XR-0Ja"/>
+                            <constraint firstItem="tAV-rt-Pyj" firstAttribute="centerX" secondItem="cg3-B9-cQf" secondAttribute="centerX" id="yEw-AP-7Kb"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="wTW-9Q-Fwb"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6jz-mA-IuN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3852" y="-803"/>
+            <point key="canvasLocation" x="3850.7246376811595" y="-803.57142857142856"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="FnY-nb-oxq">
