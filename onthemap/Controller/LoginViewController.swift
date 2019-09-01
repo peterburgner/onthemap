@@ -15,6 +15,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var signupButton: UIButton!
+    var alreadyAdjustedOriginY = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,13 +52,15 @@ class LoginViewController: UIViewController {
     }
     
     @objc func keyboardWillShow(_ notification:Notification) {
-        if emailField.isEditing {
+        if (emailField.isEditing || passwordField.isEditing) && (!alreadyAdjustedOriginY) {
             view.frame.origin.y -= 50
+            alreadyAdjustedOriginY = true
         }
     }
     
     @objc func keyboardWillDisappear(_ notification:Notification) {
         view.frame.origin.y = 0
+        alreadyAdjustedOriginY = false
     }
     
     func getKeyboardHeight(_ notification:Notification) -> CGFloat {
