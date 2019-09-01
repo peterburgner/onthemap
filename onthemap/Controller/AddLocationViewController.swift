@@ -35,8 +35,9 @@ class AddLocationViewController: UIViewController {
     func handleGeocodeLocationString (placemark: [CLPlacemark]?, error: Error?) -> Void {
         guard let error = error else {
             if let placemark = placemark {
-                print(placemark)                
-                performSegue(withIdentifier: "postLocation", sender: self)
+                let postLocationViewController = storyboard?.instantiateViewController(withIdentifier: "PostLocation") as! PostLocationViewController
+                postLocationViewController.placemark = placemark
+                present(postLocationViewController, animated: true, completion: nil)
             }
             return
         }
