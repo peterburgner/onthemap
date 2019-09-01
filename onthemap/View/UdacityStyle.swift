@@ -16,7 +16,7 @@ class UdacityStyle {
         
         var cgcolor : CGColor {
             switch self {
-            case .button: return UIColor(red: 1/255, green: 171/255, blue: 228/255, alpha: 1).cgColor
+                case .button: return UIColor(red: 1/255, green: 171/255, blue: 228/255, alpha: 1).cgColor
             }
         }
     }
@@ -27,9 +27,8 @@ class UdacityStyle {
         
         var cgfloat : CGFloat {
             switch self {
-            case .button: return 5
+                case .button: return 5
             }
         }
     }
-
 }
