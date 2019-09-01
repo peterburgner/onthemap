@@ -9,12 +9,14 @@
 import Foundation
 import UIKit
 
-class LoginButton: UIButton {
+class UdacityButton: UIButton {
     
     override func awakeFromNib() {
         super.awakeFromNib()
         layer.cornerRadius = UdacityStyle.CornerRadius.button.cgfloat
         layer.backgroundColor = UdacityStyle.Color.button.cgcolor
+        self.setTitleColor(.white, for: .normal)
+        
     }
     
 }
