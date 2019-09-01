@@ -20,6 +20,12 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         emailField.textContentType = .username
         passwordField.textContentType = .password
+        subscribeToKeyboardNotifications()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        unsubscribeFromKeyboardNotifications()
     }
     
     @IBAction func login(_ sender: Any) {
@@ -43,7 +49,34 @@ class LoginViewController: UIViewController {
         alertVC.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))
         show(alertVC, sender: nil)
     }
-
+    
+    @objc func keyboardWillShow(_ notification:Notification) {
+        if emailField.isEditing {
+            view.frame.origin.y -= 50
+        }
+    }
+    
+    @objc func keyboardWillDisappear(_ notification:Notification) {
+        view.frame.origin.y = 0
+    }
+    
+    func getKeyboardHeight(_ notification:Notification) -> CGFloat {
+        let userInfo = notification.userInfo
+        let keyboardSize = userInfo![UIResponder.keyboardFrameEndUserInfoKey] as! NSValue // of CGRect
+        return keyboardSize.cgRectValue.height
+    }
+    
+    
+    // MARK: NSNotifications
+    func subscribeToKeyboardNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillDisappear(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    func unsubscribeFromKeyboardNotifications() {
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
 
 }
 
