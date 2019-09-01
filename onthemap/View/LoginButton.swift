@@ -13,7 +13,8 @@ class LoginButton: UIButton {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        layer.cornerRadius = 5
+        layer.cornerRadius = UdacityStyle.CornerRadius.button.cgfloat
+        layer.backgroundColor = UdacityStyle.Color.button.cgcolor
     }
     
 }
