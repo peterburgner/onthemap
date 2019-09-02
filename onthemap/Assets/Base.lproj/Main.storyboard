@@ -51,7 +51,7 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo-u" translatesAutoresizingMaskIntoConstraints="NO" id="QRu-ro-TbE">
-                                <rect key="frame" x="176" y="286" width="62" height="62"/>
+                                <rect key="frame" x="199" y="332" width="16" height="16"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q4a-Lp-vtO">
                                 <rect key="frame" x="102" y="532" width="210" height="29"/>
@@ -366,6 +366,9 @@
                             </navigationBar>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="pWD-Ld-cpI">
                                 <rect key="frame" x="0.0" y="102" width="414" height="760"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Vc0-Tx-ADA" id="tms-um-aeO"/>
+                                </connections>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cg3-B9-cQf" customClass="UdacityButton" customModule="onthemap" customModuleProvider="target">
                                 <rect key="frame" x="58" y="772" width="298" height="30"/>
@@ -425,7 +428,6 @@
         <image name="logo-u" width="62" height="62"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="rPW-je-2rl"/>
         <segue reference="JD1-fE-9eo"/>
         <segue reference="Q60-mt-H4Y"/>
     </inferredMetricsTieBreakers>
