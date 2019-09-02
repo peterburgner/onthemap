@@ -32,8 +32,9 @@ class AddLocationViewController: UIViewController {
     }
     
     @IBAction func cancel(_ sender: Any) {
-        self.dismiss(animated: false) {
-        }
+        let tabbarVC = storyboard?.instantiateViewController(withIdentifier: "tabbarController") as! UITabBarController
+        present(tabbarVC, animated: true, completion: nil)
+//        self.dismiss(animated: false) fails if "Edit" is selected in post view
     }
     
     // MARK: Functions
