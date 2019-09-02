@@ -16,19 +16,15 @@ class PostLocationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(placemark)
-        
-        
-        map.centerCoordinate = placemark[0].location!.coordinate
-        
-        
-        let mkPlacemark = MKPlacemark(placemark: placemark[0])
-        
-        map.addAnnotation(mkPlacemark)
-        
+        prepareUI()
     }
-        
-
+    
+    func prepareUI() {
+        // Prepare map
+        map.centerCoordinate = placemark[0].location!.coordinate
+        let mkPlacemark = MKPlacemark(placemark: placemark[0])
+        map.addAnnotation(mkPlacemark)
+    }       
     
     @IBAction func postLocation(_ sender: Any) {
     }
