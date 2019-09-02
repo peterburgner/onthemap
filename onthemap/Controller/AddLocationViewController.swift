@@ -14,14 +14,19 @@ class AddLocationViewController: UIViewController {
     // MARK: Variables
     @IBOutlet weak var location: UITextField!
     @IBOutlet weak var url: UITextField!
+    @IBOutlet weak var findLocationButton: UdacityButton!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    var geocoding = false
     var geocodedLocation = CLPlacemark()
     
     // MARK: IBActions
     @IBAction func findLocation(_ sender: Any) {
+        setGeocoding(true)
         if url.text != "" {
             let geocoder = CLGeocoder()
             geocoder.geocodeAddressString(location.text ?? "", completionHandler: handleGeocodeLocationString(placemark:error:))
         } else {
+            setGeocoding(false)
             showMissingURLError()
         }
     }
@@ -55,5 +60,16 @@ class AddLocationViewController: UIViewController {
         let alertVC = UIAlertController(title: "No URL given", message: nil, preferredStyle: .alert)
         alertVC.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))
         show(alertVC, sender: nil)
+    }
+    
+    func setGeocoding(_ geocoding: Bool) {
+        if geocoding {
+            activityIndicator.startAnimating()
+        } else {
+            activityIndicator.stopAnimating()
+        }
+        location.isEnabled = !geocoding
+        url.isEnabled = !geocoding
+        findLocationButton.isEnabled = !geocoding
     }
 }

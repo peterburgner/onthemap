@@ -310,22 +310,29 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_world" translatesAutoresizingMaskIntoConstraints="NO" id="eNC-Fl-gfs">
                                 <rect key="frame" x="159" y="150" width="96" height="67"/>
                             </imageView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="EFy-wA-bgR">
+                                <rect key="frame" x="197" y="472" width="20" height="37"/>
+                                <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="eNC-Fl-gfs" firstAttribute="top" secondItem="AlJ-8u-bPq" secondAttribute="bottom" constant="50" id="39n-x8-hBj"/>
                             <constraint firstItem="AlJ-8u-bPq" firstAttribute="centerX" secondItem="leP-Vm-aHD" secondAttribute="centerX" id="3TS-S7-eIr"/>
+                            <constraint firstItem="Xb8-uR-sMp" firstAttribute="trailing" secondItem="EFy-wA-bgR" secondAttribute="trailing" constant="197" id="6ua-Ml-M9V"/>
                             <constraint firstItem="xQb-uq-ZVP" firstAttribute="top" secondItem="dPf-AY-oSo" secondAttribute="bottom" constant="20" id="8QO-qI-Ee4"/>
                             <constraint firstItem="AlJ-8u-bPq" firstAttribute="leading" secondItem="RaH-kH-sXv" secondAttribute="leading" id="OdJ-bD-4oZ"/>
                             <constraint firstItem="leP-Vm-aHD" firstAttribute="top" secondItem="xQb-uq-ZVP" secondAttribute="bottom" constant="40" id="PAS-vk-40I"/>
                             <constraint firstItem="xQb-uq-ZVP" firstAttribute="leading" secondItem="Xb8-uR-sMp" secondAttribute="leading" constant="58" id="Pyc-Zf-Etr"/>
                             <constraint firstItem="leP-Vm-aHD" firstAttribute="leading" secondItem="Xb8-uR-sMp" secondAttribute="leading" constant="58" id="W2M-rv-UyT"/>
+                            <constraint firstItem="EFy-wA-bgR" firstAttribute="leading" secondItem="Xb8-uR-sMp" secondAttribute="leading" constant="197" id="Yh8-Wc-gH2"/>
                             <constraint firstItem="AlJ-8u-bPq" firstAttribute="centerX" secondItem="eNC-Fl-gfs" secondAttribute="centerX" id="b34-ek-ACn"/>
                             <constraint firstItem="eNC-Fl-gfs" firstAttribute="leading" secondItem="Xb8-uR-sMp" secondAttribute="leading" constant="159" id="bYJ-oc-w2Y"/>
                             <constraint firstItem="Xb8-uR-sMp" firstAttribute="trailing" secondItem="leP-Vm-aHD" secondAttribute="trailing" constant="58" id="cbM-cr-wIT"/>
                             <constraint firstItem="dPf-AY-oSo" firstAttribute="top" secondItem="eNC-Fl-gfs" secondAttribute="bottom" constant="70" id="exr-QP-6Ae"/>
                             <constraint firstItem="Xb8-uR-sMp" firstAttribute="trailing" secondItem="eNC-Fl-gfs" secondAttribute="trailing" constant="159" id="gwy-mR-I27"/>
                             <constraint firstItem="AlJ-8u-bPq" firstAttribute="centerX" secondItem="dPf-AY-oSo" secondAttribute="centerX" id="h0v-Ov-EV0"/>
+                            <constraint firstItem="EFy-wA-bgR" firstAttribute="top" secondItem="leP-Vm-aHD" secondAttribute="bottom" constant="35" id="is4-x1-eEe"/>
                             <constraint firstItem="Xb8-uR-sMp" firstAttribute="trailing" secondItem="xQb-uq-ZVP" secondAttribute="trailing" constant="58" id="l16-q2-TwN"/>
                             <constraint firstItem="AlJ-8u-bPq" firstAttribute="top" secondItem="Xb8-uR-sMp" secondAttribute="top" constant="12" id="r4E-ZB-k4S"/>
                             <constraint firstItem="Xb8-uR-sMp" firstAttribute="trailing" secondItem="dPf-AY-oSo" secondAttribute="trailing" constant="58" id="ubC-Wa-7Zj"/>
@@ -335,6 +342,8 @@
                         <viewLayoutGuide key="safeArea" id="Xb8-uR-sMp"/>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="EFy-wA-bgR" id="PtR-9p-gEK"/>
+                        <outlet property="findLocationButton" destination="leP-Vm-aHD" id="7aY-zv-ssO"/>
                         <outlet property="location" destination="dPf-AY-oSo" id="7YT-sD-TaP"/>
                         <outlet property="url" destination="xQb-uq-ZVP" id="VTy-AK-g2t"/>
                         <segue destination="Vc0-Tx-ADA" kind="presentation" identifier="postLocation" id="rPW-je-2rl"/>
