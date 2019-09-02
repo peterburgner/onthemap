@@ -7,11 +7,13 @@
 //
 
 import Foundation
+import MapKit
 
 class UdacityClient {
     
     struct Auth {
         static var sessionId = ""
+        static var objectId = ""
     }
     
     enum Endpoints {
@@ -21,6 +23,8 @@ class UdacityClient {
         case logout
         case signup
         case getStudentLocations(String, String)
+        case postStudentLocation
+        case updateStudentLocation(String)
         
         var stringValue: String {
             switch self {
@@ -29,6 +33,8 @@ class UdacityClient {
             // signup URL taken from incorrect spec
             case .signup: return "https://www.google.com/url?q=https://www.udacity.com/account/auth%23!/signup&sa=D&ust=1566892321832000"
             case .getStudentLocations(let max, let order): return Endpoints.base + "/StudentLocation?limit=" + max + "&order=" + order
+            case .postStudentLocation: return Endpoints.base + "/StudentLocation"
+            case .updateStudentLocation(let objectId): return Endpoints.postStudentLocation.stringValue + "/" + objectId
             }
         }
         
@@ -76,6 +82,7 @@ class UdacityClient {
                 
                 let loggedInResponse = try! decoder.decode(LoggedInResponse.self, from: newData)
                 Auth.sessionId = loggedInResponse.session.id
+                Auth.objectId = loggedInResponse.account.key
                 DispatchQueue.main.async {
                     completion(true, nil)
                 }
@@ -157,6 +164,45 @@ class UdacityClient {
                 }
                 return
             }
+        }
+        task.resume()
+    }
+    
+    class func postNewStudentLocation(location: MKPlacemark, mediaURL: String, completion: @escaping (Bool, Error?) -> Void ) {
+        var request = URLRequest(url: Endpoints.postStudentLocation.url)
+        request.httpMethod = "POST"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        /*
+         firstName and lastName hard-coded since no UI in spec and should probably be retrieved from login object.
+         However, user name is not provided in loggedInResponse.
+         Advise in https://knowledge.udacity.com/questions/16842 cannot be implemented since the URL https://www.udacity.com/api/user/{key} and https://onthemap-api.udacity.com/v1/user/ 404. My request in student hub was not yet answered.
+        */
+        request.httpBody = "{\"uniqueKey\": \"\(Auth.objectId)\", \"firstName\": \"Speedy\", \"lastName\": \"Gonzales\",\"mapString\": \"\(location.name ?? "")\", \"mediaURL\": \"\(mediaURL)\",\"latitude\": \(location.coordinate.latitude), \"longitude\": \(location.coordinate.longitude)}".data(using: .utf8)
+        let session = URLSession.shared
+        let task = session.dataTask(with: request) { data, response, error in
+            
+            guard let data = data else {
+                DispatchQueue.main.async {
+                    completion (false, error)
+                }
+                return
+            }
+            
+            let decoder = JSONDecoder()
+            
+            do {
+                _ = try decoder.decode(PostStudentLocation.self, from: data)
+                DispatchQueue.main.async {
+                    completion(true, nil)
+                }
+            } catch {
+                DispatchQueue.main.async {
+                    completion(false,nil)
+                }
+                return
+            }
+            
+            print(String(data: data, encoding: .utf8)!)
         }
         task.resume()
     }

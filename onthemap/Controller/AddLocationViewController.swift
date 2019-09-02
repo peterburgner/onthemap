@@ -37,6 +37,7 @@ class AddLocationViewController: UIViewController {
             if let placemark = placemark {
                 let postLocationViewController = storyboard?.instantiateViewController(withIdentifier: "PostLocation") as! PostLocationViewController
                 postLocationViewController.placemark = placemark
+                postLocationViewController.mediaURL = url.text ?? ""
                 present(postLocationViewController, animated: true, completion: nil)
             }
             return
