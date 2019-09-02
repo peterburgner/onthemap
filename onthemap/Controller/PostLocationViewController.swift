@@ -32,10 +32,9 @@ class PostLocationViewController: UIViewController, MKMapViewDelegate {
     }
 
     func handlePostLocation (success: Bool, error: Error?) {
-        if success {
-            let mapVC = storyboard?.instantiateViewController(withIdentifier: "MapViewController") as! MapViewController
-            mapVC.reload(self)
-            present(mapVC, animated: true, completion: nil)
+        if success {            
+            let tabbarVC = storyboard?.instantiateViewController(withIdentifier: "tabbarController") as! UITabBarController
+            present(tabbarVC, animated: true, completion: nil)
         } else {
             showPostingFailedError()
         }

@@ -51,7 +51,7 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo-u" translatesAutoresizingMaskIntoConstraints="NO" id="QRu-ro-TbE">
-                                <rect key="frame" x="176" y="286" width="62" height="62"/>
+                                <rect key="frame" x="199" y="332" width="16" height="16"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q4a-Lp-vtO">
                                 <rect key="frame" x="102" y="532" width="210" height="29"/>
@@ -404,7 +404,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="FnY-nb-oxq">
             <objects>
-                <tabBarController id="Png-Zt-SXN" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="tabbarController" id="Png-Zt-SXN" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="fMj-Fi-oDG">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -428,7 +428,6 @@
         <image name="logo-u" width="62" height="62"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="uQN-WP-5BB"/>
         <segue reference="6ve-cb-Ol7"/>
         <segue reference="mop-FR-YP0"/>
     </inferredMetricsTieBreakers>
