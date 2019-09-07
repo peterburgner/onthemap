@@ -188,9 +188,8 @@ class UdacityClient {
         request.httpMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         /*
-         firstName and lastName hard-coded since no UI in spec and should probably be retrieved from login object.
-         However, user name is not provided in loggedInResponse.
-         Advise in https://knowledge.udacity.com/questions/16842 cannot be implemented since the URL https://www.udacity.com/api/user/{key} and https://onthemap-api.udacity.com/v1/user/ 404. My request in student hub was not yet answered.
+         firstName and lastName hard-coded since getting Public User Data seems broken
+         https://knowledge.udacity.com/questions/54850
         */
         request.httpBody = "{\"uniqueKey\": \"\(Auth.objectId)\", \"firstName\": \"Speedy\", \"lastName\": \"Gonzales\",\"mapString\": \"\(location.name ?? "")\", \"mediaURL\": \"\(mediaURL)\",\"latitude\": \(location.coordinate.latitude), \"longitude\": \(location.coordinate.longitude)}".data(using: .utf8)
         let session = URLSession.shared
