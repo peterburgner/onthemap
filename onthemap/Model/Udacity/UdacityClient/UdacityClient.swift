@@ -188,7 +188,7 @@ class UdacityClient {
         request.httpMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         /*
-         firstName and lastName hard-coded since getting Public User Data seems broken
+         firstName and lastName hard-coded since getting Public User Data is confirmed to work only "intermittently". See the issue I raised in knowlege:
          https://knowledge.udacity.com/questions/54850
         */
         request.httpBody = "{\"uniqueKey\": \"\(Auth.objectId)\", \"firstName\": \"Speedy\", \"lastName\": \"Gonzales\",\"mapString\": \"\(location.name ?? "")\", \"mediaURL\": \"\(mediaURL)\",\"latitude\": \(location.coordinate.latitude), \"longitude\": \(location.coordinate.longitude)}".data(using: .utf8)
