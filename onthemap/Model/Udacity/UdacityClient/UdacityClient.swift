@@ -210,9 +210,9 @@ class UdacityClient {
                 DispatchQueue.main.async {
                     completion(true, nil)
                 }
-            } catch {
+            } catch let error {
                 DispatchQueue.main.async {
-                    completion(false,nil)
+                    completion(false,error)
                 }
                 return
             }
