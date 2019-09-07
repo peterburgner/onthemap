@@ -52,19 +52,19 @@ class TableViewController: UIViewController, UITabBarDelegate, UITableViewDelega
             showStudentInformationFailure(message:error?.localizedDescription ?? "")
         } else
         {
-            UdacityClient.studentLocation = studentLocations
+            StudentLocationModel.studentLocation = studentLocations
             table.reloadData()
         }
     }
         
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return UdacityClient.studentLocation.count
+        return StudentLocationModel.studentLocation.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         cell = tableView.dequeueReusableCell(withIdentifier: "studentInformation", for: indexPath)
         
-        let currentStudent = UdacityClient.studentLocation[indexPath.row]
+        let currentStudent = StudentLocationModel.studentLocation[indexPath.row]
         
         cell.imageView?.image = UIImage(named: "icon_pin")
         cell.textLabel?.text = currentStudent.firstName + " " + currentStudent.lastName
@@ -77,7 +77,7 @@ class TableViewController: UIViewController, UITabBarDelegate, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let currentStudent = UdacityClient.studentLocation[indexPath.row]
+        let currentStudent = StudentLocationModel.studentLocation[indexPath.row]
             let app = UIApplication.shared
                 app.open(URL(string:currentStudent.mediaURL)!, options: [:], completionHandler: nil)
     } 
