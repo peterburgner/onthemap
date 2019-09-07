@@ -10,7 +10,6 @@ import UIKit
 
 extension UIViewController {
     
-    
     // MARK IBActions
     @IBAction func logout(_ sender: Any) {
         UdacityClient.logout(completion: handleLogoutResponse(success:error:))
@@ -41,4 +40,10 @@ extension UIViewController {
         show(alertVC, sender: nil)
     }
     
+    func getKeyboardHeight(_ notification:Notification) -> CGFloat {
+        let userInfo = notification.userInfo
+        let keyboardSize = userInfo![UIResponder.keyboardFrameEndUserInfoKey] as! NSValue // of CGRect
+        return keyboardSize.cgRectValue.height
+    }
+
 }

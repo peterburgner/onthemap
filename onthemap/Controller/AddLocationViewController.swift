@@ -18,6 +18,18 @@ class AddLocationViewController: UIViewController {
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     var geocoding = false
     var geocodedLocation = CLPlacemark()
+    var alreadyAdjustedOriginY = false
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        subscribeToKeyboardNotifications()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        unsubscribeFromKeyboardNotifications()
+    }
     
     // MARK: IBActions
     @IBAction func findLocation(_ sender: Any) {
@@ -34,7 +46,6 @@ class AddLocationViewController: UIViewController {
     @IBAction func cancel(_ sender: Any) {
         let tabbarVC = storyboard?.instantiateViewController(withIdentifier: "tabbarController") as! UITabBarController
         present(tabbarVC, animated: true, completion: nil)
-//        self.dismiss(animated: false) fails if "Edit" is selected in post view
     }
     
     // MARK: Functions
@@ -72,5 +83,31 @@ class AddLocationViewController: UIViewController {
         location.isEnabled = !geocoding
         url.isEnabled = !geocoding
         findLocationButton.isEnabled = !geocoding
+    }
+    
+    @objc func keyboardWillShow(_ notification:Notification) {
+        if (location.isEditing || url.isEditing) && (!alreadyAdjustedOriginY) {
+            let buttonOrigin = findLocationButton.frame.origin.y
+            let keyboardHeight = getKeyboardHeight(notification)
+            let offset = buttonOrigin-keyboardHeight
+            view.frame.origin.y -= offset
+            alreadyAdjustedOriginY = true
+        }
+    }
+    
+    @objc func keyboardWillDisappear(_ notification:Notification) {
+        view.frame.origin.y = 0
+        alreadyAdjustedOriginY = false
+    }
+    
+    // MARK: NSNotifications
+    func subscribeToKeyboardNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillDisappear(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    func unsubscribeFromKeyboardNotifications() {
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
     }
 }

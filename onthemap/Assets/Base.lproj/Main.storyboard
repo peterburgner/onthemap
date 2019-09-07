@@ -51,7 +51,7 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo-u" translatesAutoresizingMaskIntoConstraints="NO" id="QRu-ro-TbE">
-                                <rect key="frame" x="199" y="332" width="16" height="16"/>
+                                <rect key="frame" x="176" y="286" width="62" height="62"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q4a-Lp-vtO">
                                 <rect key="frame" x="102" y="532" width="210" height="29"/>
@@ -437,7 +437,7 @@
         <image name="logo-u" width="62" height="62"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="6ve-cb-Ol7"/>
-        <segue reference="mop-FR-YP0"/>
+        <segue reference="jIK-t1-TMW"/>
+        <segue reference="Q60-mt-H4Y"/>
     </inferredMetricsTieBreakers>
 </document>
