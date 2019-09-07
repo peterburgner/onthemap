@@ -1,6 +1,6 @@
 # onthemap
 
-An implementation for one of Udacity's iOS nanodegree challenges
+An implementation for one of Udacity's iOS nanodegree challenges in the second term
 
 ## Features
 - [x] Users can log in with their Udacity account or sign up with a new one
