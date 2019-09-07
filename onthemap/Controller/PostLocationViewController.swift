@@ -25,6 +25,8 @@ class PostLocationViewController: UIViewController, MKMapViewDelegate {
         // Prepare map
         map.centerCoordinate = placemark[0].location!.coordinate
         map.addAnnotation(MKPlacemark(placemark: placemark[0]))
+        let region = MKCoordinateRegion(center: map.centerCoordinate, latitudinalMeters: 100000, longitudinalMeters: 100000)
+        map.setRegion(region, animated: true)
     }       
     
     @IBAction func postLocation(_ sender: Any) {
