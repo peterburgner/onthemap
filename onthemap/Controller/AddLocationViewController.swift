@@ -9,7 +9,7 @@
 import UIKit
 import CoreLocation
 
-class AddLocationViewController: UIViewController {
+class AddLocationViewController: UIViewController, UITextFieldDelegate {
     
     // MARK: Variables
     @IBOutlet weak var location: UITextField!
@@ -100,6 +100,12 @@ class AddLocationViewController: UIViewController {
     
     @objc func keyboardWillDisappear(_ notification:Notification) {
         endEditing()
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        endEditing()
+        return true
     }
     
     @objc func endEditing() {

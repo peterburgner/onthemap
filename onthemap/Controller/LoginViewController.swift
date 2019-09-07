@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
 
 
     @IBOutlet weak var emailField: UITextField!
@@ -57,6 +57,12 @@ class LoginViewController: UIViewController {
         let alertVC = UIAlertController(title: "Login failed", message: message, preferredStyle: .alert)
         alertVC.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))
         show(alertVC, sender: nil)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        endEditing()
+        return true
     }
     
     @objc func keyboardWillShow(_ notification:Notification) {
