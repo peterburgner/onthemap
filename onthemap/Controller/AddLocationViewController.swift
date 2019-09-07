@@ -60,6 +60,7 @@ class AddLocationViewController: UIViewController {
             return
         }
         showGeocodeLocationStringError(message: error.localizedDescription)
+        setGeocoding(false)
     }
     
     func showGeocodeLocationStringError(message: String) {
