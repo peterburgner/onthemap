@@ -24,6 +24,8 @@ class AddLocationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         subscribeToKeyboardNotifications()
+        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing))
+        view.addGestureRecognizer(tap)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -97,6 +99,10 @@ class AddLocationViewController: UIViewController {
     }
     
     @objc func keyboardWillDisappear(_ notification:Notification) {
+        endEditing()
+    }
+    
+    @objc func endEditing() {
         view.frame.origin.y = 0
         alreadyAdjustedOriginY = false
     }
