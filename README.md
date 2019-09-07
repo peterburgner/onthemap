@@ -1,6 +1,6 @@
 # onthemap
 
-An implementation for one of Udacity's iOS nanodegree challenge. 
+An implementation for one of Udacity's iOS nanodegree challenges
 
 
 Features
