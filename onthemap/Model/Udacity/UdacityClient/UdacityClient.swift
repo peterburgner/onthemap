@@ -144,25 +144,40 @@ class UdacityClient {
         let request = URLRequest(url: Endpoints.getStudentLocations("100", "-updatedAt").url)
         let session = URLSession.shared
         let task = session.dataTask(with: request) { data, response, error in
-            guard let data = data else {
-                DispatchQueue.main.async {
-                    completion ([], error)
-                }                
+            
+            if error != nil {
+                completion ([], error)
                 return
             }
             
-            let decoder = JSONDecoder()
-            
-            do {
-                let studentInformationResponse = try decoder.decode(StudentLocationsResponse.self, from: data)
-                DispatchQueue.main.async {
-                    completion(studentInformationResponse.results, nil)
-                }
-            } catch {
-                DispatchQueue.main.async {
-                    completion([],nil)
-                }
+            guard let httpStatusCode = (response as? HTTPURLResponse)?.statusCode else {
+                completion ([], error)
                 return
+            }
+            
+            if httpStatusCode >= 200 && httpStatusCode < 300 {
+                let decoder = JSONDecoder()
+                
+                guard let data = data else {
+                    completion ([], error)
+                    return
+                }
+                
+                do {
+                    let studentInformationResponse = try decoder.decode(StudentLocationsResponse.self, from: data)
+                    DispatchQueue.main.async {
+                        completion(studentInformationResponse.results, nil)
+                    }
+                } catch let error {
+                    DispatchQueue.main.async {
+                        completion([],error)
+                    }
+                    return
+                }
+            }
+            else {
+                // create custom error for all httpStatusCodes
+                return completion ([], NSError(domain:"", code:httpStatusCode, userInfo:nil))
             }
         }
         task.resume()
