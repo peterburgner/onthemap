@@ -9,14 +9,17 @@
 import UIKit
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
+    
+    // TODO: Add activity indicator
 
-
+    // MARK: - Variables
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var signupButton: UIButton!
     var alreadyAdjustedOriginY = false
     
+    // MARK: - View Functions
     override func viewDidLoad() {
         super.viewDidLoad()
         emailField.textContentType = .username
@@ -44,6 +47,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         UIApplication.shared.open(UdacityClient.Endpoints.signup.url)
     }
     
+    
+    // MARK: - Functions
     func handleLoginResponse(success: Bool, error: Error?) {
         if success {
             performSegue(withIdentifier: "showMap", sender: nil)
@@ -81,7 +86,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         alreadyAdjustedOriginY = false
     }
     
-    // MARK: NSNotifications
+    // MARK: - NSNotifications
     func subscribeToKeyboardNotifications() {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillDisappear(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
