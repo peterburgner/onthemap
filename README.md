@@ -1,6 +1,6 @@
 # onthemap
 
-Look at our Udacity student locations and post your own
+Look at other Udacity student locations and post your own
 
 ## Features
 - [x] Users can log in with their Udacity account or sign up with a new one
