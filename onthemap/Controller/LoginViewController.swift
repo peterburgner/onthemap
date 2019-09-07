@@ -30,8 +30,14 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func login(_ sender: Any) {
-        UdacityClient.login(username: emailField.text ?? "", password: passwordField.text ?? "", completion: handleLoginResponse(success:error:) )
+        let errorMessage = "Please enter username and password"
+        if emailField.text == "" || passwordField.text == "" {
+            showLoginFailure(message: errorMessage)
+        } else {
+            UdacityClient.login(username: emailField.text ?? "", password: passwordField.text ?? "", completion: handleLoginResponse(success:error:) )
+        }
     }
+    
     @IBAction func signup(_ sender: Any) {
         UIApplication.shared.open(UdacityClient.Endpoints.signup.url)
     }
