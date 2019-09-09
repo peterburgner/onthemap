@@ -11,9 +11,6 @@ Look at Udacity student locations and post your own
 
 ## Screenshots
 
-### Login
-<img src="https://user-images.githubusercontent.com/49632333/64505936-8dedc300-d28a-11e9-94f2-f4493dadece5.png" width="300" alt="Login">
-
 ### Map of Student Locations
 <img src="https://user-images.githubusercontent.com/49632333/64506069-166c6380-d28b-11e9-941c-fe397950d2f9.png" width="300" alt="Login">
 
