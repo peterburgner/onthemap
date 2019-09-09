@@ -13,7 +13,7 @@ Look at Udacity student locations and post your own
 
 Map of Student Locations   |   Add a new Student Location
 :-------------------------:|:-------------------------:
-<img src="https://user-images.githubusercontent.com/49632333/64506069-166c6380-d28b-11e9-941c-fe397950d2f9.png" width="300" alt="Login">  |  <img src="https://user-images.githubusercontent.com/49632333/64506149-56cbe180-d28b-11e9-82b1-8dcb3f87a817.png" width="300" alt="Post a new Student Location">)
+<img src="https://user-images.githubusercontent.com/49632333/64506069-166c6380-d28b-11e9-941c-fe397950d2f9.png" width="300" alt="Login">  |  <img src="https://user-images.githubusercontent.com/49632333/64506149-56cbe180-d28b-11e9-82b1-8dcb3f87a817.png" width="300" alt="Post a new Student Location">
 
 
 
